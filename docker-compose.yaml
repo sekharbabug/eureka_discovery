@@ -1,0 +1,31 @@
+version: "3"
+services:
+  eureka-server:
+#    image: organization-service
+    build: ./eureka-server
+    ports:
+      - "8697:8697"
+    networks:
+      - eureka-network
+
+  amazon-shopping:
+#    image: site-service
+    build: ./amazon-shopping
+    ports:
+      - "9999:9999"
+    networks:
+      - eureka-server
+    depends_on:
+      - eureka-network
+ 
+  payment-service:
+#    image: user-service
+    build: ./payment-service
+    ports:
+      - "8081:8081"
+    networks:
+      - eureka-server
+    depends_on:
+      - eureka-network
+networks:
+  eureka-network:
