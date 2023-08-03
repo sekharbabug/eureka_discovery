@@ -69,7 +69,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>spring-boot-docker-maven</finalName>
+		<finalName>eureka-server</finalName>
 	</build>
 	<repositories>
 		<repository>
