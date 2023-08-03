@@ -4,7 +4,7 @@ FROM openjdk:17-oracle
 # Make port 8080 available to the world outside this container
 #EXPOSE 8080
 
-ADD target/payment-shopping.jar payment-shopping.jar
+ADD target/payment-service.jar payment-service.jar
 
 # Run the jar file 
-ENTRYPOINT ["java","-jar","payment-shopping.jar"]
+ENTRYPOINT ["java","-jar","payment-service.jar"]
