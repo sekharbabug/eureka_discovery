@@ -2,9 +2,9 @@
 FROM openjdk:17-oracle
 
 # Make port 8080 available to the world outside this container
-EXPOSE 8080
+#EXPOSE 8080
 
-ADD target/spring-boot-docker-maven.jar spring-boot-docker-maven.jar
+ADD target/eureka-server.jar eureka-server.jar
 
 # Run the jar file 
-ENTRYPOINT ["java","-jar","spring-boot-docker-maven.jar"]
+ENTRYPOINT ["java","-jar","eureka-server.jar"]
