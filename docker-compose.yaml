@@ -1,7 +1,8 @@
 version: "3"
 services:
   eureka-server:
-#    image: organization-service
+    image: eureka-server
+    container_name: eureka-server
     build: ./eureka-server
     ports:
       - "8697:8697"
@@ -9,23 +10,25 @@ services:
       - eureka-network
 
   amazon-shopping:
-#    image: site-service
+    image: amazon-shopping
+    container_name: amazon-shopping
     build: ./amazon-shopping
     ports:
       - "9999:9999"
     networks:
-      - eureka-server
-    depends_on:
       - eureka-network
+    depends_on:
+      - eureka-server
 
   payment-service:
-#    image: user-service
+    image: payment-service
+    container_name: payment-service
     build: ./payment-service
     ports:
       - "8081:8081"
     networks:
-      - eureka-server
+     - eureka-network
     depends_on:
-      - eureka-network
+      - eureka-server
 networks:
   eureka-network:
