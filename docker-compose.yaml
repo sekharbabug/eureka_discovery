@@ -19,6 +19,7 @@ services:
       - eureka-network
     depends_on:
       - eureka-server
+      - payment-service
 
   payment-service:
     image: payment-service
