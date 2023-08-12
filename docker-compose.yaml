@@ -17,7 +17,7 @@ services:
       - eureka-server
     depends_on:
       - eureka-network
- 
+
   payment-service:
 #    image: user-service
     build: ./payment-service
