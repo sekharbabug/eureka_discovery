@@ -13,7 +13,7 @@ public class ShoppingController {
 
 	@GetMapping("/amazon-payment/{price}")
 	public String invokePaymentService(@PathVariable int price) {
-		String url = "http://payment-service:8888/payment-provider/payNow/" + price;
+		String url = "http://PAYMENT-SERVICE/payment-provider/payNow/" + price;
 		return template.getForObject(url, String.class);
 	}
 
