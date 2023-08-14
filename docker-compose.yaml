@@ -20,6 +20,8 @@ services:
     depends_on:
       - eureka-server
       - payment-service
+   environment:
+      - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka"
 
   payment-service:
     image: payment-service
@@ -31,5 +33,7 @@ services:
      - eureka-network
     depends_on:
       - eureka-server
+     environment:
+      - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka"
 networks:
   eureka-network:
