@@ -10,10 +10,12 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 
 @RestController
 @RequestMapping("/k8data")
+@EnableDiscoveryClient
 public class ShoppingController {
 	@Autowired
 	private RestTemplate template;
