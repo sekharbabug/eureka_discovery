@@ -28,6 +28,10 @@ public class ShoppingController {
 		
 	}
 
+	/**
+           instead of give microservice name registed in eureka server it wont work in docker container,
+	   use inplace of microservice name with docker container name
+	**/
 	@GetMapping("/amazon-payment/{price}")
 	public String invokePaymentService(@PathVariable int price) {
 		String url = "http://payment-service:8888/payment-provider/payNow/" + price;
