@@ -7,9 +7,18 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
+@RequestMapping("/k8data")
 public class ShoppingController {
 	@Autowired
 	private RestTemplate template;
+
+
+	@GetMapping("/getMessage")
+	public ResponseEntity<Object> getMessageData() {
+		List list=Stream.of("laptop", "dell", "sony", "mac").collect(Collectors.toList());
+		return new ResponseEntity<Object>(list, HttpStatus.OK);
+		
+	}
 
 	@GetMapping("/amazon-payment/{price}")
 	public String invokePaymentService(@PathVariable int price) {
