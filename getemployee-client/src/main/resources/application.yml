@@ -4,4 +4,4 @@ spring:
     - optional:configserver:http://localhost:8882
     
 server:
-  port: 9090    
+  port: 8884    
