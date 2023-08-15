@@ -49,7 +49,7 @@ services:
   employee-provider:
     image: employee-provider
     container_name: employee-provider
-    build: ./emlployee-provider
+    build: ./employee-provider
     ports:
       - "8883:8883"
     networks:
