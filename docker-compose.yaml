@@ -35,5 +35,37 @@ services:
       - eureka-server
     environment:
       - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka"
+  
+  config-server:
+    image: config-server
+    container_name: config-server
+    build: ./config-server
+    ports:
+      - "8882:8882"
+    networks:
+     - eureka-network
+   
+
+  employee-provider:
+    image: employee-provider
+    container_name: employee-provider
+    build: ./emlployee-provider
+    ports:
+      - "8883:8883"
+    networks:
+     - eureka-network
+   
+
+  getemployee-client:
+    image: getemployee-client
+    container_name: getemployee-client
+    build: ./getemployee-client
+    ports:
+      - "8884:8884"
+    networks:
+     - eureka-network
+    depends_on:
+     - config-server
+      
 networks:
   eureka-network:
