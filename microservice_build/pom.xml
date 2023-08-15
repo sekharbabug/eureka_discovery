@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>microservice_build</groupId>
+	<artifactId>microservice_build</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>MicroService_build</name>
+	<description>MicroServiceBuild</description>
+	<packaging>pom</packaging>
+	<modules>
+		<module>amazon-shopping</module>
+		<module>payment-service</module>
+		<module>eureka-server</module>
+		<module>config-server</module>
+		<module>employee-provider</module>
+		<module>getemployee-client</module>
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>17</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
