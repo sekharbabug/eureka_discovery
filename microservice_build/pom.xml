@@ -9,12 +9,12 @@
 	<description>MicroServiceBuild</description>
 	<packaging>pom</packaging>
 	<modules>
-		<module>./amazon-shopping</module>
-		<module>./payment-service</module>
-		<module>./eureka-server</module>
-		<module>./config-server</module>
-		<module>./employee-provider</module>
-		<module>./getemployee-client</module>
+		<module>../amazon-shopping</module>
+		<module>../payment-service</module>
+		<module>../eureka-server</module>
+		<module>../config-server</module>
+		<module>../employee-provider</module>
+		<module>../getemployee-client</module>
 	</modules>
 	<build>
 		<plugins>
