@@ -5,7 +5,7 @@ services:
     container_name: eureka-server
     build: ./eureka-server
     environment:
-    - "JAVA_OPTS=-DEUREKA_SERVER=http://eureka-server:8761/eureka"
+      JAVA_OPTS: -DEUREKA_SERVER=http://eureka-server:8761/eureka
     ports:
       - "8761:8761"
     networks:
@@ -16,7 +16,7 @@ services:
     container_name: amazon-shopping
     build: ./amazon-shopping
     environment:
-    - "JAVA_OPTS=-DEUREKA_SERVER=http://eureka-server:8761/eureka"
+      JAVA_OPTS: -DEUREKA_SERVER=http://eureka-server:8761/eureka
     ports:
       - "9999:9999"
     networks:
@@ -30,7 +30,7 @@ services:
     container_name: payment-service
     build: ./payment-service
     environment:
-    - "JAVA_OPTS=-DEUREKA_SERVER=http://eureka-server:8761/eureka"
+      JAVA_OPTS: -DEUREKA_SERVER=http://eureka-server:8761/eureka
     ports:
       - "8888:8888"
     networks:
