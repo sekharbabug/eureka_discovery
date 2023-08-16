@@ -4,6 +4,8 @@ services:
     image: eureka-server
     container_name: eureka-server
     build: ./eureka-server
+    environment:
+    - "JAVA_OPTS=-DEUREKA_SERVER=http://eureka-server:8761/eureka"
     ports:
       - "8761:8761"
     networks:
@@ -13,6 +15,8 @@ services:
     image: amazon-shopping
     container_name: amazon-shopping
     build: ./amazon-shopping
+    environment:
+    - "JAVA_OPTS=-DEUREKA_SERVER=http://eureka-server:8761/eureka"
     ports:
       - "9999:9999"
     networks:
@@ -20,21 +24,19 @@ services:
     depends_on:
       - eureka-server
       - payment-service
-    environment:
-      - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka"
 
   payment-service:
     image: payment-service
     container_name: payment-service
     build: ./payment-service
+    environment:
+    - "JAVA_OPTS=-DEUREKA_SERVER=http://eureka-server:8761/eureka"
     ports:
       - "8888:8888"
     networks:
      - eureka-network
     depends_on:
       - eureka-server
-    environment:
-      - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka"
   
   config-server:
     image: config-server
