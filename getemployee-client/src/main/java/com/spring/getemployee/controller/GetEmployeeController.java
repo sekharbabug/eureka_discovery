@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/getemployee-service")
-@RefreshScope
+
 public class GetEmployeeController {
 
 	@Autowired
