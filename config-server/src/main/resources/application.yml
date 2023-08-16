@@ -5,12 +5,12 @@ spring:
     name: CONFIG-SERVER
     
 
- cloud:
+  cloud:
     config:
       server:
+        bootstrap: true
         git:
           uri: https://github.com/sekharbabug/config-server
-          clone-on-start: true
           
 management:
   endpoints:
