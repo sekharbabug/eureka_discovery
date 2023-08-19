@@ -1,7 +1,14 @@
 spring:
-  config:
-    import:
-    - optional:configserver:http://config-server:8882
+  cloud:
+    config:
+      enabled: true
+      uri:
+      - http://config-server:8882
+      fail-fast: true
+      retry:
+        max-attempts: 20
+  application:
+    name: getemployee-client
     
 server:
-  port: 8884    
+  port: 8884
