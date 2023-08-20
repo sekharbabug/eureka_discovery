@@ -19,7 +19,6 @@ import org.springframework.context.annotation.Lazy;
 @EnableDiscoveryClient
 public class ShoppingController {
 	@Autowired
-	@Lazy
 	private RestTemplate template;
 
 
