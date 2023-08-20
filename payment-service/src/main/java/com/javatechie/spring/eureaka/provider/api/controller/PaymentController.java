@@ -8,7 +8,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @RestController
 @RequestMapping("/payment-provider")
-@EnableDiscoveryClient
 public class PaymentController {
 
 	@GetMapping("/payNow/{price}")
