@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Lazy;
 
 @RestController
 @RequestMapping("/k8data")
-@EnableDiscoveryClient
 public class ShoppingController {
 	@Autowired
 	private RestTemplate template;
