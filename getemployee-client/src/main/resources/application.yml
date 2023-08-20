@@ -2,13 +2,6 @@ spring:
   config:
     import:
     - optional:configserver:http://config-server:8882
-   
-  cloud:
-    config:
-      enabled: true
-      fail-fast: true
-      retry:
-        max-attempts: 20
     
 server:
-  port: 8884
+  port: 8881
