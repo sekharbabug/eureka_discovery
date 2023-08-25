@@ -25,9 +25,9 @@
 		<module>../amazon-shopping</module>
 		<module>../payment-service</module>
 		<module>../eureka-server</module> 
-		<module>../config-server</module>
+		<!-- <module>../config-server</module>
 		<module>../employee-provider</module>
-		<module>../getemployee-client</module>
+		<module>../getemployee-client</module> -->
 	</modules>
 
 <dependencyManagement>
