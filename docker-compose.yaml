@@ -1,36 +1,34 @@
-version: "3"
+version: "3.7"
 services:
-  
-  config-server:
-    image: config-server
-    container_name: config-server
-    build: ./config-server
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    extra_hosts: ['host.docker.internal:host-gateway']
     ports:
-      - "8882:8882"
-    networks:
-     - eureka-network
-   
-
-  employee-provider:
-    image: employee-provider
-    container_name: employee-provider
-    build: ./employee-provider
-    ports:
-      - "8883:8883"
-    networks:
-     - eureka-network
-   
-
-  getemployee-client:
-    image: getemployee-client
-    container_name: getemployee-client
-    build: ./getemployee-client
-    ports:
-      - "8884:8884"
-    networks:
-     - eureka-network
-    depends_on:
-     - config-server
-      
-networks:
-  eureka-network:
+      - "9411:9411"
+  discovery-service:
+      image: eureka-server
+      container_name: eureka-server
+      ports:
+        - "8761:8761"
+      healthcheck:
+        test: curl fail http://localhost:8761/eureka/v2/apps || exit 1
+        interval: 4s
+        timeout: 2s
+        retries: 3
+  payment-service:
+      image: payment-service
+      container_name: payment-service
+      ports:
+        - "9999:9999"
+      links:
+        - discovery-service
+        - zipkin
+  amazon-shopping:
+      image: amazon-shopping
+      container_name: amazon-shopping
+      ports:
+        - "8888:8888"
+      links:
+        - discovery-service
+        - zipkin
