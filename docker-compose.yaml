@@ -7,7 +7,7 @@ services:
     ports:
       - "9411:9411"
   discovery-service:
-      image: eureka-server
+      image: piomin/eureka-server:0.0.1-SNAPSHOT
       container_name: eureka-server
       ports:
         - "8761:8761"
@@ -17,7 +17,7 @@ services:
         timeout: 2s
         retries: 3
   payment-service:
-      image: payment-service
+      image: piomin/payment-service:0.0.1-SNAPSHOT
       container_name: payment-service
       ports:
         - "9999:9999"
@@ -25,7 +25,7 @@ services:
         - discovery-service
         - zipkin
   amazon-shopping:
-      image: amazon-shopping
+      image: piomin/amazon-shopping:0.0.1-SNAPSHOT
       container_name: amazon-shopping
       ports:
         - "8888:8888"
