@@ -52,6 +52,22 @@
 			<artifactId>eureka-client</artifactId>
 		</dependency>
 
+		<dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-tracing-bridge-brave</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.zipkin.reporter2</groupId>
+      <artifactId>zipkin-reporter-brave</artifactId>
+    </dependency>
+  
+
+		<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+    <version>2.0.2</version>
+  </dependency>
+
 	</dependencies>
 
 	
